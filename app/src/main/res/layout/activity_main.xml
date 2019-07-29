@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/headerView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_hight_300dp"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_hight_120dp"
+                android:background="@drawable/background_gradient" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:layout_marginRight="@dimen/margin_16dp"
+                android:text="TiKi"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/size_text_30sp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_15dp"
+                android:layout_marginRight="@dimen/margin_16dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="@dimen/corner_radius_10dp"
+                app:cardElevation="@dimen/card_elevation_5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_hinght_50dp"
+                    android:drawableLeft="@drawable/ic_search_primary_light"
+                    android:drawablePadding="@dimen/drawableLef_draw_10dp"
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/padding_10dp"
+                    android:text="Bạn tìm gì hôm nay..."
+                    android:textColor="@color/cardview_dark_background" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerProduct"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/layout_hight_180dp"
+                android:layout_below="@+id/cardSevice"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:clipToPadding="false"
+                android:foregroundGravity="center"
+                android:overScrollMode="never">
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <TextView
+                android:id="@+id/titleProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewPagerProduct"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:layout_marginRight="@dimen/margin_16dp"
+                android:text="Từ khóa hot"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="@dimen/size_text_20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titleProduct"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_marginRight="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_50dp"
+                android:clipToPadding="false"
+                tools:listitem="@layout/item_product_view"
+                android:scrollbars="none" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
